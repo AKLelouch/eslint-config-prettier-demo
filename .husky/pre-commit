@@ -1,2 +1,4 @@
 #!/bin/sh
-npx lint-staged
+# npx lint-staged
+npx eslint src/** --fix
+npx prettier --write ./src
