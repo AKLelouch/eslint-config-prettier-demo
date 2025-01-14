@@ -1,5 +1,2 @@
 #!/bin/sh
-# npx lint-staged
-npx eslint src/** --fix
-npx prettier --write ./src
-git add .
+npx lint-staged
