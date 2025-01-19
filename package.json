@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-prettier-demo",
+  "name": "eslint-prettier-config-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "npx eslint src/**",
     "prettier": "npx prettier --write ./src",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepack": "npmignore --auto"
   },
   "author": "",
   "license": "ISC",
@@ -17,12 +18,23 @@
     "eslint": "^9.18.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
+    "npmignore": "^0.3.1",
     "prettier": "3.4.2"
   },
   "lint-staged": {
     "src/**/*.{tsx,js}": [
       "eslint --fix",
       "prettier --write --ignore-unknown"
+    ]
+  },
+  "publishConfig": {
+    "ignore": [
+      "eslint.config.js",
+      ".eslintignore",
+      ".prettierrc",
+      ".prettierignore",
+      ".gitignore",
+      ".husky"
     ]
   }
 }
